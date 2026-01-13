@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukola Abodunrin - Product Strategy Consultant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #c85a3a 0%, #b84726 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+        
+        .contact-info a:hover {
+            opacity: 1;
+        }
+        
+        section {
+            background: white;
+            margin: 40px auto;
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #c85a3a;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        
+        .case-study {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .case-study:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .case-study-title {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .case-study-meta {
+            background: #edf2f7;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        
+        .challenge {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .approach {
+            background: #fffff0;
+            border-left: 4px solid #f6e05e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .outcome {
+            background: #f0fff4;
+            border-left: 4px solid #68d391;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .metric {
+            display: inline-block;
+            background: #c85a3a;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin: 5px 5px 5px 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .skill-category h4 {
+            color: #c85a3a;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
+            color: #4a5568;
+        }
+        
+        .skill-category li:before {
+            content: "▹ ";
+            color: #c85a3a;
+            font-weight: bold;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #c85a3a 0%, #b84726 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 8px;
+        }
+        
+        .cta h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #b84726;
+            padding: 15px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            section {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Oluwabukola Abodunrin</h1>
+            <p>Product Strategy Consultant specializing in fintech, B2B platforms, and complex product environments</p>
+            <div class="contact-info">
+                <a href="mailto:bukola.abodunrin@yahoo.com">bukola.abodunrin@yahoo.com</a>
+                <a href="tel:2404857672">(240) 485-7672</a>
+                <a href="https://www.linkedin.com/in/oluwabukola-abodunrin-bukola-abodunrin" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>About</h2>
+            <p>I partner with early-stage and growing companies to build products that create clarity, confidence, and momentum. With experience launching financial products that drove $1M+ in deposits, reduced costs by 30%, and protected $73M+ in assets, I bring strategic thinking grounded in real operating experience.</p>
+            <p style="margin-top: 20px;">Currently leading product strategy at Teamshares, I work with clients on a part-time basis to help them navigate complex product challenges—from 0-to-1 launches to scaling existing platforms. My approach combines deep fintech expertise with cross-functional leadership and a focus on outcomes over outputs.</p>
+        </section>
+
+        <section>
+            <h2>Case Studies</h2>
+            
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h3>Remote Deposit Capture: $1M+ Revenue Driver</h3>
+                    </div>
+                    <div class="case-study-meta">Financial Product Launch</div>
+                </div>
+                
+                <div class="challenge">
+                    <strong>Challenge:</strong> 85 small businesses using Teamshares' neobank had no way to deposit checks digitally, forcing them to visit physical banks and slowing cash flow. This created friction and reduced platform engagement.
+                </div>
+                
+                <div class="approach">
+                    <strong>Approach:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Conducted 50+ user research sessions to understand check deposit behaviors and pain points</li>
+                        <li>Collaborated with Stripe to define mobile web RDC requirements and technical feasibility</li>
+                        <li>Designed multi-layer fraud prevention system, aligning engineering, compliance, and finance teams</li>
+                        <li>Created intuitive user education materials and onboarding flows</li>
+                        <li>Managed cross-functional team of 5 through end-to-end delivery</li>
+                    </ul>
+                </div>
+                
+                <div class="outcome">
+                    <strong>Outcome:</strong><br>
+                    <span class="metric">$1M+ deposits in 6 months</span>
+                    <span class="metric">16% increase in money movement</span>
+                    <span class="metric">95% user satisfaction</span>
+                    <span class="metric">100% fraud prevention accuracy</span>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h3>Payment Processing Platform: 30% Cost Reduction at Scale</h3>
+                    </div>
+                    <div class="case-study-meta">B2B Platform Development</div>
+                </div>
+                
+                <div class="challenge">
+                    <strong>Challenge:</strong> 50+ businesses needed payment processing capabilities but were using fragmented, expensive solutions. Manual processes created operational inefficiencies and high transaction costs.
+                </div>
+                
+                <div class="approach">
+                    <strong>Approach:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Designed scalable payment processing architecture to serve multiple businesses</li>
+                        <li>Led 10-engineer team through sprint planning, balancing new features with platform stability</li>
+                        <li>Optimized payment flows to reduce transaction costs and processing time</li>
+                        <li>Implemented automation to eliminate manual reconciliation work</li>
+                        <li>Built monitoring and reporting systems for real-time visibility</li>
+                    </ul>
+                </div>
+                
+                <div class="outcome">
+                    <strong>Outcome:</strong><br>
+                    <span class="metric">$500K+ monthly volume</span>
+                    <span class="metric">30% cost savings</span>
+                    <span class="metric">50+ businesses served</span>
+                    <span class="metric">Fully automated processing</span>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h3>Multi-Layer Security Architecture: $73M Protected</h3>
+                    </div>
+                    <div class="case-study-meta">Compliance & Risk Management</div>
+                </div>
+                
+                <div class="challenge">
+                    <strong>Challenge:</strong> As Teamshares' neobank scaled, protecting customer funds while maintaining seamless user experience became critical. Needed comprehensive security framework that met regulatory requirements without creating friction.
+                </div>
+                
+                <div class="approach">
+                    <strong>Approach:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Designed multi-layered account security architecture from ground up</li>
+                        <li>Implemented automated compliance reporting and transaction monitoring</li>
+                        <li>Created segregation of duties framework across 90+ companies</li>
+                        <li>Developed main/inbound account structure to reduce fraud risk</li>
+                        <li>Established risk management system with cross-functional stakeholder alignment</li>
+                    </ul>
+                </div>
+                
+                <div class="outcome">
+                    <strong>Outcome:</strong><br>
+                    <span class="metric">$73M+ assets protected</span>
+                    <span class="metric">Zero fraud incidents</span>
+                    <span class="metric">100% compliance maintained</span>
+                    <span class="metric">90+ companies secured</span>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h3>Banking Migration Strategy: 83% Completion Rate</h3>
+                    </div>
+                    <div class="case-study-meta">Strategic Execution</div>
+                </div>
+                
+                <div class="challenge">
+                    <strong>Challenge:</strong> Needed to migrate network companies to new banking infrastructure with 50% completion target. Required coordination across enterprise partnerships, product development, and change management.
+                </div>
+                
+                <div class="approach">
+                    <strong>Approach:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Developed scalable onboarding tools to reduce friction in account opening process</li>
+                        <li>Forged and managed enterprise partnerships with Wells Fargo and Bank of America</li>
+                        <li>Created communication strategy to drive adoption and address concerns</li>
+                        <li>Built monitoring dashboards to track progress and identify blockers</li>
+                        <li>Coordinated cross-functional teams to ensure seamless execution</li>
+                    </ul>
+                </div>
+                
+                <div class="outcome">
+                    <strong>Outcome:</strong><br>
+                    <span class="metric">83% completion vs 50% target</span>
+                    <span class="metric">Enterprise partnerships established</span>
+                    <span class="metric">Scalable migration framework built</span>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-title">
+                        <h3>Capital Optimization: $500K+ Unlocked</h3>
+                    </div>
+                    <div class="case-study-meta">Strategic Vendor Management</div>
+                </div>
+                
+                <div class="challenge">
+                    <strong>Challenge:</strong> $500K+ in capital was tied up in charge card infrastructure with costly vendor contracts. Needed to wind down existing system while migrating to Brex without disrupting business operations.
+                </div>
+                
+                <div class="approach">
+                    <strong>Approach:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Led strategic planning for charge card wind-down across network</li>
+                        <li>Optimized migration sequencing to minimize disruption</li>
+                        <li>Ensured all compliance requirements met throughout transition</li>
+                        <li>Coordinated with Brex to streamline onboarding process</li>
+                        <li>Eliminated costly vendor contracts while maintaining service continuity</li>
+                    </ul>
+                </div>
+                
+                <div class="outcome">
+                    <strong>Outcome:</strong><br>
+                    <span class="metric">$500K+ capital unlocked</span>
+                    <span class="metric">Vendor contracts eliminated</span>
+                    <span class="metric">Zero service disruption</span>
+                    <span class="metric">100% compliance maintained</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Product Strategy</h4>
+                    <ul>
+                        <li>0-to-1 Product Development</li>
+                        <li>Product Roadmap & Vision</li>
+                        <li>MVP Definition & Prioritization</li>
+                        <li>Market & Competitive Analysis</li>
+                        <li>User Research & Testing</li>
+                        <li>Go-to-Market Strategy</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Domain Expertise</h4>
+                    <ul>
+                        <li>Fintech & Payments</li>
+                        <li>B2B/B2C Platforms</li>
+                        <li>E-commerce & Marketplaces</li>
+                        <li>Regulated Environments</li>
+                        <li>Consumer Products</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Leadership & Execution</h4>
+                    <ul>
+                        <li>Cross-Functional Team Leadership</li>
+                        <li>Stakeholder Management</li>
+                        <li>Enterprise Partnership Management</li>
+                        <li>Agile/Sprint Planning</li>
+                        <li>Vendor Relationship Management</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Technical</h4>
+                    <ul>
+                        <li>Java, Python, JavaScript, SQL</li>
+                        <li>Linear, Notion, Figma, Amplitude</li>
+                        <li>API Integrations (Stripe, Plaid)</li>
+                        <li>Data Analysis & Metrics</li>
+                        <li>Wireframing & User Flows</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Background</h2>
+            <h3>Current Role</h3>
+            <p><strong>Product Strategy & Execution Lead, Teamshares Inc.</strong> (August 2025 - Present)<br>
+            Leading banking migrations, workers' compensation consolidation, and business insurance redesign for network of 90+ small businesses.</p>
+            
+            <h3>Previous Experience</h3>
+            <p><strong>Product Manager, Teamshares Inc.</strong> (July 2024 - August 2025)<br>
+            Led financial product development including payment processing, security architecture, and digital banking features.</p>
+            
+            <p style="margin-top: 15px;"><strong>Associate Product Manager, Teamshares Inc.</strong> (August 2023 - July 2024)<br>
+            Launched Remote Deposit Capture, developed risk management systems, and established financial controls framework.</p>
+            
+            <p style="margin-top: 15px;"><strong>Product Management Intern, American Express</strong> (Summer 2022)<br>
+            Owned Developer Tool Strategy project, analyzing infrastructure needs and presenting recommendations to senior leadership.</p>
+            
+            <h3 style="margin-top: 30px;">Education</h3>
+            <p><strong>Columbia University, School of General Studies</strong><br>
+            Bachelor of Arts, Information Science (Computer Science & Psychology)<br>
+            Dean's List, Honor Society, Cum Laude</p>
+            
+            <p style="margin-top: 15px;"><strong>U.S. Army Service</strong><br>
+            Army Wheeled Vehicle Mechanic (91B), IRR</p>
+        </section>
+
+        <section class="cta">
+            <h2>Let's Work Together</h2>
+            <p>I partner with companies navigating complex product challenges—whether in fintech, consumer products, B2B platforms, or emerging markets. From launching your first product to scaling existing offerings, I bring strategic thinking grounded in hands-on execution.</p>
+            <a href="mailto:bukola.abodunrin@yahoo.com" class="cta-button">Get In Touch</a>
+        </section>
+    </div>
+</body>
+</html>
